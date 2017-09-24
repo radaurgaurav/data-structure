@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SinglyLinkedList;
 
 public class CyclicCheck {
     public static void main(String[] args) {
@@ -11,8 +11,8 @@ public class CyclicCheck {
 
     private static boolean isCyclic(CustomLinkedList customLinkedList)
     {
-        LinkedListNode slow = customLinkedList.getHead();
-        LinkedListNode fast=slow;
+   OneWayNode slow = customLinkedList.getHead();
+        OneWayNode fast=slow;
         while(fast!=null && fast.getNext()!=null)
         {
             fast=fast.getNext().getNext();

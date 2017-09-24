@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SinglyLinkedList;
 
 /**
  * program to find middle of linked list using two pointers
@@ -15,12 +15,12 @@ public class MiddleOfLinkedList {
         /**
          * find middle of linked list using two pointers
          */
-        LinkedListNode head = customLinkedList.getHead();
+        OneWayNode head = customLinkedList.getHead();
         int counter = 0;
 
 
-        LinkedListNode current = head;
-        LinkedListNode middle = head;
+        OneWayNode current = head;
+        OneWayNode middle = head;
 
         while (current.getNext() != null) {
             counter++;

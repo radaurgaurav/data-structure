@@ -1,12 +1,12 @@
-package LinkedList;
+package LinkedList.DoublyLinkedList;
 
-public class CustomLinkedList {
+public class CustomTwoWayLinkedList {
 
     private static int counter;
-    private LinkedListNode head;
-    LinkedListNode current = null;
+    private TwoWayNode head;
+    TwoWayNode current = null;
 
-    public CustomLinkedList() {
+    public CustomTwoWayLinkedList() {
 
     }
 
@@ -14,12 +14,13 @@ public class CustomLinkedList {
         for (Object object : data
                 ) {
             if (head == null) {
-                head = new LinkedListNode(object);
+                head = new TwoWayNode(object);
                 current = head;
             } else {
-                LinkedListNode temp = new LinkedListNode(object);
+                TwoWayNode temp = new TwoWayNode(object);
                 current.setNext(temp);
                 current = temp;
+                current.setPrevious(head);
             }
             incrementCounter();
         }
@@ -27,7 +28,7 @@ public class CustomLinkedList {
 
     }
 
-    public LinkedListNode getHead() {
+    public TwoWayNode getHead() {
         return head;
     }
 
@@ -50,7 +51,7 @@ public class CustomLinkedList {
         if (index < 0)
             return null;
 
-        LinkedListNode current = null;
+        TwoWayNode current = null;
 
         if (head != null) {
             current = head;
@@ -88,7 +89,7 @@ public class CustomLinkedList {
 
         if (head != null) {
             output += "[" + head.getData() + "]";
-            LinkedListNode current = head.getNext();
+            TwoWayNode current = head.getNext();
             while (current != null) {
                 output += "[" + current.getData() + "]";
                 current = current.getNext();
@@ -100,8 +101,8 @@ public class CustomLinkedList {
 
 
     public void makeLinkedListCyclic() {
-        LinkedListNode headNode = head;
-        LinkedListNode currentNode = headNode;
+        TwoWayNode headNode = head;
+       TwoWayNode currentNode = headNode;
         while (currentNode.getNext() != null) {
             currentNode = currentNode.getNext();
         }

@@ -1,6 +1,4 @@
-package LinkedList;
-
-import javax.xml.soap.Node;
+package LinkedList.SinglyLinkedList;
 
 public class NthNodeFromLast {
 
@@ -14,9 +12,9 @@ public class NthNodeFromLast {
 
     public static Object kthNodeFromLast(int k, CustomLinkedList customLinkedList)
     {
-        LinkedListNode head = customLinkedList.getHead();
-         LinkedListNode slow=head;
-         LinkedListNode fast=head;
+        OneWayNode head = customLinkedList.getHead();
+         OneWayNode slow=head;
+         OneWayNode fast=head;
          int count=1;
          while(fast.getNext()!=null)
          {

@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SinglyLinkedList;
 
 public class ReverseLinkedList {
 
@@ -14,10 +14,10 @@ public class ReverseLinkedList {
 
     private static void reverseList( CustomLinkedList customLinkedList)
     {
-        LinkedListNode head=customLinkedList.getHead();
-        LinkedListNode previous=null;
-        LinkedListNode next=null;
-        LinkedListNode current=null;
+       OneWayNode head=customLinkedList.getHead();
+       OneWayNode previous=null;
+        OneWayNode next=null;
+        OneWayNode current=null;
         while(head!=null)
         {
             next=head.getNext();

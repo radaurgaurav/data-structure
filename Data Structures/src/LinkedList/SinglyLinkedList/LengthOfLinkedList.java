@@ -1,4 +1,5 @@
-package LinkedList;
+package LinkedList.SinglyLinkedList;
+
 
 /**
  * class to find length of linked list
@@ -15,8 +16,8 @@ public class LengthOfLinkedList {
         System.out.println("Length of linked list is : " + recursiveWay(customLinkedList.getHead()));
     }
 
-    private static int iterativeWay(LinkedListNode node) {
-        LinkedListNode currentNode=node;
+    private static int iterativeWay(OneWayNode node) {
+        OneWayNode currentNode=node;
         int length = 0;
         if (currentNode != null) {
             length++;
@@ -28,7 +29,7 @@ public class LengthOfLinkedList {
         return length;
     }
 
-    private static int recursiveWay(LinkedListNode node) {
+    private static int recursiveWay(OneWayNode node) {
         if(node == null){ //base case
             return 0;
         }
