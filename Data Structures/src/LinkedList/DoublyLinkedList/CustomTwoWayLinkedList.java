@@ -19,8 +19,9 @@ public class CustomTwoWayLinkedList {
             } else {
                 TwoWayNode temp = new TwoWayNode(object);
                 current.setNext(temp);
+                temp.setPrevious(current);
                 current = temp;
-                current.setPrevious(head);
+
             }
             incrementCounter();
         }
@@ -45,8 +46,8 @@ public class CustomTwoWayLinkedList {
     }
 
 
-    public Object get(int index) {
-        Object value = null;
+    public TwoWayNode get(int index) {
+        TwoWayNode value = null;
         int length = 0;
         if (index < 0)
             return null;
@@ -57,13 +58,13 @@ public class CustomTwoWayLinkedList {
             current = head;
 
             if (index == 0) {
-                value = current.getData();
+                value = current;
             } else {
                 while (length != index) {
                     current = current.getNext();
                     length++;
                 }
-                value = current.getData();
+                value = current;
             }
 
 
