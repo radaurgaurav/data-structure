@@ -11,20 +11,12 @@ public  class LinkedListNode {
         data = dataValue;
     }
 
-    @SuppressWarnings("unused")
-    public LinkedListNode(Object dataValue, LinkedListNode nextValue) {
-        next = nextValue;
-        data = dataValue;
-    }
+
 
     public Object getData() {
         return data;
     }
 
-    @SuppressWarnings("unused")
-    public void setData(Object dataValue) {
-        data = dataValue;
-    }
 
     public LinkedListNode getNext() {
         return next;
