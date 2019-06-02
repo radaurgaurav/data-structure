@@ -5,64 +5,56 @@ package Tree;
  */
 public class SkewTree {
 
-    private TreeNode root;
+    private TreeNode rootNode;
 
     public static void main(String[] args) {
         SkewTree tree = new SkewTree();
-        tree.addNode(1);
-        tree.addNode(2);
-        tree.addNode(3);
-        tree.addNode(4);
-        tree.addNode(5);
-        tree.addNode(6);
-        tree.addNode(7);
-        tree.addNode(8);
 
+        for (int i= 1; i<10 ;i ++)
+            tree.addNode(i);
 
-        tree.printTreeNodes(tree.root);
+        tree.printTreeNodes(tree.rootNode);
     }
 
     /**
      * Method to add new node in the tree
-     *
      * @param value integer value for the node data
      */
     private void addNode(int value) {
-        root = addTreeNode(root, value);
+        rootNode = addTreeNode(rootNode, value);
     }
 
     /**
      * Method that actually add node to tree recursively
-     *
-     * @param current current node
+     * @param rootNode rootNode node
      * @param value   data value for the node
-     * @return root node of type TreeNode
+     * @return rootNode node of type TreeNode
      */
-    private TreeNode addTreeNode(TreeNode current, int value) {
-        if (current == null) {
+    private TreeNode addTreeNode(TreeNode rootNode, int value) {
+        if (rootNode == null) {
             return new TreeNode(value);
         }
 
         // if value is even add to left subtree else add add to right sub tree
-        if (current.leftNode == null && current.rightNode == null) {
+        if (rootNode.leftNode == null && rootNode.rightNode == null) {
             if (value % 2 == 0)
-                current.leftNode = new TreeNode(value);
+                rootNode.leftNode = new TreeNode(value);
             else
-                current.rightNode = new TreeNode(value);
+                rootNode.rightNode = new TreeNode(value);
 
         } else {
-            if (current.leftNode != null)
-                addTreeNode(current.leftNode, value);
+            if (rootNode.leftNode != null)
+                addTreeNode(rootNode.leftNode, value);
             else
-                addTreeNode(current.rightNode, value);
+                addTreeNode(rootNode.rightNode, value);
         }
 
-        return current;
+        return rootNode;
     }
 
     /**
      * Method to print all nodes of the tree
-     * @param node root node
+     * @param node rootNode
      */
     private void printTreeNodes(TreeNode node) {
         if (node == null)
