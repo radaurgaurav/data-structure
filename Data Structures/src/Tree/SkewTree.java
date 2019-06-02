@@ -51,7 +51,7 @@ public class SkewTree {
     }
 
     /**
-     * Method that actually add node to right skew tree recursively
+     * Method that actually add node to Left skew tree recursively
      *
      * @param rootNode rootNode node
      * @param value    data value for the node
